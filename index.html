@@ -38,7 +38,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center position-relative">
+  <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <style>
         .cls-1 {
@@ -102,11 +102,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#services">브랜드 소개</a></li>
+          <!-- <li><a href="#services">브랜드 소개</a></li>
           <li><a href="#about">브랜드 만족도</a></li>
           <li><a href="#about-3">브랜드 경쟁력</a></li>
           <li><a href="#services-2">50호점 한정 혜택</a></li>
-          <li><a href="#recent-post">가맹 문의</a></li>
+          <li><a href="#recent-post">가맹 문의</a></li> -->
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -163,6 +163,9 @@
     <section id="services" class="services section">
 
       <!-- Section Title -->
+      <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+        <img src="https://raw.githubusercontent.com/KSH7131/portfolio_01/a99a8e03e670fde28ad19074287bf8645b2541e7/ksh/image/web_blue.svg" class="img-fluid" style="width: 30%;">
+      </div>
       <div class="container section-title" data-aos="fade-up">
         <h2>브랜드 소개</h2>
         <p>젠틀 버거는 내점해주신 손님께 최고의 맛과 서비스를 제공하는 브랜드입니다.</p>
@@ -170,12 +173,12 @@
           <div class="row">
             <div class="col-md-6">
               <div class="box">
-                <img src="/ksh/image/um/intro01.png" class="img-fluid" alt="">
+                <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/um/intro01.png?raw=true" class="img-fluid" alt="">
               </div>
             </div>
             <div class="col-md-6">
               <div class="box">
-                <img src="/ksh/image/um/intro02.png" class="img-fluid" alt="">
+                <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/um/intro02.png?raw=true" class="img-fluid" alt="">
               </div>
             </div>
           </div>
@@ -708,6 +711,12 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
+  <!-- 
+  유지보수
+   -->
+   <script src="./data/navi.js"></script>
+   <script src="./ksh/ksh.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -717,10 +726,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-<!-- 
-  유지보수
-  <script src="./data/navi.js"></script>
-  <script src="./ksh/ksh.js"></script> -->
+
 
 
 </body>
