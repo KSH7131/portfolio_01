@@ -13,28 +13,41 @@
 /* Fonts */
 :root {
   --default-font: "Noto Sans KR", sans-serif, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Marcellus",  sans-serif;
-  --nav-font: "Marcellus",  sans-serif;
+  --heading-font: "Marcellus", sans-serif;
+  --nav-font: "Marcellus", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #e0e621; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #212529;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #2d465e;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #e0e621;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #e0e621;; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #e0e621; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #ffffff;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #e0e621;
+  ;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #212529;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #e0e621;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -75,7 +88,7 @@ a {
 }
 
 a:hover {
-  
+
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
 }
@@ -771,7 +784,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: vh3;
   position: relative;
 }
 
@@ -949,169 +962,111 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Services Section
+#.intro Section
 --------------------------------------------------------------*/
-.services .section-title h2 {
-  color: #212529;
-  font-size: 48px;
+
+.intro .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.services .content .service-item {
-  background-color: var(--surface-color);
-  padding: 20px 30px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  border-left: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  position: relative;
+.intro .section-title h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-right: 20px;
 }
 
-.services .content .service-item .number {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 80%);
+.intro .section-title .txt {
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #6a6a6a;
 }
 
-.services .content .service-item .service-item-icon {
-  position: relative;
-  margin-bottom: 20px;
-  color: var(--accent-color);
+.intro .box {
+  margin-top: 20px;
+  /* 박스 간격 */
 }
 
-.services .content .service-item .service-item-icon img {
-  width: 50px;
+.intro .img-fluid {
+  max-width: 100%;
+  /* 이미지 크기 조절 */
+  height: auto;
+  /* 비율 유지 */
 }
 
-.services .content .service-item .service-item-icon:before {
-  position: absolute;
-  content: "";
-  transform: rotate(45deg);
-  z-index: -1;
-  left: -20px;
-  border-top: 40px solid transparent;
-  border-bottom: 40px solid transparent;
-  border-right: 40px solid var(--accent-color);
-  display: none;
-}
-
-.services .content .service-item .service-item-icon>span {
-  color: var(--default-color);
-  font-size: 4rem;
-}
-
-.services .content .service-item .service-item-content .service-heading {
-  font-size: 20px;
-  color: var(--default-color);
-  font-weight: 400;
-}
-
-.services .content .service-item .service-item-content p {
-  font-size: 15px;
-}
-
-@media (min-width: 769px) {
-  .services .content [class^=col-]:nth-child(4n+4) .service-item {
-    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+@media (max-width: 992px) {
+  .intro .section-title {
+    display: block;
+    /* Change to block to stack elements */
   }
 
-  .services .content [class^=col-]:nth-last-child(-n+4) .service-item {
-    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  }
-}
-
-@media (max-width: 768px) {
-  .services .content [class^=col-]:nth-child(2n+2) .service-item {
-    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  .intro .section-title h2 {
+    font-size: 2.0rem;
+    margin-right: 0;
+    /* Remove right margin when stacked */
+    text-align: left;
   }
 
-  .services .content [class^=col-]:last-child .service-item,
-  .services .content [class^=col-]:nth-last-child(2) .service-item {
-    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  .intro .section-title .txt {
+    font-size: 1.0rem;
+  }
+
+  .intro .section-title .txt br {
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .services .content [class^=col-] .service-item {
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    margin-bottom: 10px;
+  .intro .section-title h2 {
+    font-size: 1.6rem;
+    /* 모바일에서 크기 조정 */
+  }
+
+  .intro .section-title .txt {
+    font-size: 0.8rem;
+    /* 모바일에서 크기 조정 */
   }
 }
 
 /*--------------------------------------------------------------
-# About Section
+# Store_Info Section
 --------------------------------------------------------------*/
-.about .section-title {
-  margin-bottom: 60px;
-}
-
-.about .content {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 7rem 0;
-}
-
-.about .content .img-overlap {
-  margin-top: -150px;
-}
-
-.about p {
-  color: var(--contrast-color);
-}
-
-.about .content-title {
-  color: var(--contrast-color);
-  font-weight: 300;
-  text-align: left;
-}
-
-.about .content-title strong {
-  font-weight: 700;
-}
-
-.about .content-subtitle {
-  font-weight: 300;
-  color: var(--contrast-color);
-  text-transform: uppercase;
-  font-size: 1.3rem;
-}
-
-/*--------------------------------------------------------------
-# Services 2 Section
---------------------------------------------------------------*/
-.services-2 {
+.Store_Info {
   overflow: visible;
   margin-bottom: 200px;
 }
 
-.services-2 .section-title {
-  text-align: left;
+.Store_Info .section-title {
 }
 
-.services-2 .section-title h2 {
-  color: color-mix(in srgb, var(--contrast-color), transparent 50%);
-  text-transform: uppercase;
-  font-size: 20px;
+.Store_Info .section-title h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.services-2 .section-title p {
+.Store_Info .section-title p {
   color: var(--contrast-color);
 }
 
-.services-2 .services-carousel-wrap {
+.Store_Info .services-carousel-wrap {
   position: relative;
   margin-bottom: -200px;
 }
 
-.services-2 .swiper-wrapper {
+.Store_Info .swiper-wrapper {
   height: auto;
 }
 
-.services-2 .service-item {
+.Store_Info .service-item {
   position: relative;
   overflow: hidden;
 }
 
-.services-2 .service-item:before {
+.Store_Info .service-item:before {
   content: "";
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);
   top: 0;
@@ -1125,12 +1080,12 @@ section,
   transition: 0.3s all ease;
 }
 
-.services-2 .service-item img {
+.Store_Info .service-item img {
   transition: 0.5s all ease;
   transform: scale(1);
 }
 
-.services-2 .service-item .service-item-contents {
+.Store_Info .service-item .service-item-contents {
   z-index: 9;
   position: absolute;
   bottom: 20px;
@@ -1142,33 +1097,33 @@ section,
   visibility: hidden;
 }
 
-.services-2 .service-item .service-item-contents .service-item-category {
+.Store_Info .service-item .service-item-contents .service-item-category {
   color: var(--accent-color);
   text-transform: uppercase;
 }
 
-.services-2 .service-item .service-item-contents .service-item-title {
+.Store_Info .service-item .service-item-contents .service-item-title {
   color: var(--contrast-color);
   margin-bottom: 0;
 }
 
-.services-2 .service-item:hover:before {
+.Store_Info .service-item:hover:before {
   opacity: 1;
   visibility: visible;
 }
 
-.services-2 .service-item:hover .service-item-contents {
+.Store_Info .service-item:hover .service-item-contents {
   transform: translateY(0%);
   opacity: 1;
   visibility: visible;
 }
 
-.services-2 .service-item:hover img {
+.Store_Info .service-item:hover img {
   transform: scale(1.2);
 }
 
-.services-2 .navigation-prev,
-.services-2 .navigation-next {
+.Store_Info .navigation-prev,
+.Store_Info .navigation-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1181,34 +1136,34 @@ section,
   transition: 0.3s all ease;
 }
 
-.services-2 .navigation-prev i,
-.services-2 .navigation-next i {
+.Store_Info .navigation-prev i,
+.Store_Info .navigation-next i {
   font-size: 2rem;
 }
 
-.services-2 .navigation-prev:hover,
-.services-2 .navigation-next:hover {
+.Store_Info .navigation-prev:hover,
+.Store_Info .navigation-next:hover {
   background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
-.services-2 .navigation-prev {
+.Store_Info .navigation-prev {
   left: 10px;
 }
 
-.services-2 .navigation-next {
+.Store_Info .navigation-next {
   right: 10px;
 }
 
-.services-2 .swiper {
+.Store_Info .swiper {
   padding-bottom: 50px;
 }
 
-.services-2 .swiper-pagination {
+.Store_Info .swiper-pagination {
   bottom: 0px;
 }
 
-.services-2 .swiper-pagination .swiper-pagination-bullet {
+.Store_Info .swiper-pagination .swiper-pagination-bullet {
   border-radius: 0;
   width: 20px;
   height: 4px;
@@ -1216,7 +1171,7 @@ section,
   opacity: 1;
 }
 
-.services-2 .swiper-pagination .swiper-pagination-bullet-active {
+.Store_Info .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color) !important;
 }
 
