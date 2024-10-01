@@ -82,7 +82,7 @@ body {
 
 a {
   /* border: 1px solid red; */
-  color: var(--accent-color);
+  /* color: var(--accent-color); */
   text-decoration: none;
   transition: 0.3s;
 }
@@ -789,15 +789,16 @@ section,
 }
 
 .section-title h2 {
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 2.6rem;
+  font-weight: 700;
   margin-bottom: 15px;
 }
 
 .section-title p {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: #6a6a6a;
   margin-bottom: 0;
-  font-family: var(--heading-font);
-  /* font-size: 32px; */
 }
 
 /*--------------------------------------------------------------
@@ -965,32 +966,29 @@ section,
 #.intro Section
 --------------------------------------------------------------*/
 
-.intro .section-title {
+#intro .section-title {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.intro .section-title h2 {
+#intro .section-title h2 {
   font-size: 2.6rem;
   font-weight: 700;
   line-height: 1;
   margin-right: 20px;
 }
 
-.intro .section-title .txt {
+#intro .section-title .txt {
   text-align: left;
-  font-size: 1.2rem;
-  line-height: 1.55;
-  color: #6a6a6a;
 }
 
-.intro .box {
+#intro .box {
   margin-top: 20px;
   /* 박스 간격 */
 }
 
-.intro .img-fluid {
+#intro .img-fluid {
   max-width: 100%;
   /* 이미지 크기 조절 */
   height: auto;
@@ -998,75 +996,108 @@ section,
 }
 
 @media (max-width: 992px) {
-  .intro .section-title {
+  #intro .section-title {
     display: block;
     /* Change to block to stack elements */
   }
 
-  .intro .section-title h2 {
+  #intro .section-title h2 {
     font-size: 2.0rem;
     margin-right: 0;
     /* Remove right margin when stacked */
     text-align: left;
   }
 
-  .intro .section-title .txt {
+  #intro .section-title .txt {
     font-size: 1.0rem;
   }
 
-  .intro .section-title .txt br {
+  #intro .section-title .txt br {
     display: none;
   }
 }
 
 @media (max-width: 576px) {
-  .intro .section-title h2 {
+  #intro .section-title h2 {
     font-size: 1.6rem;
     /* 모바일에서 크기 조정 */
   }
 
-  .intro .section-title .txt {
+  #intro .section-title .txt {
     font-size: 0.8rem;
     /* 모바일에서 크기 조정 */
   }
 }
 
+
 /*--------------------------------------------------------------
-# Store_Info Section
+# S_Info Section
 --------------------------------------------------------------*/
-.Store_Info {
+#S_Info .img {
+  position: relative; /* 부모 요소로서의 위치 지정 */
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* 이미지가 기본적으로 가장 아래에 위치 */
+}
+
+#S_Info .carousel-container {
+  position: absolute; /* 이미지 위에 배치되도록 절대 위치 */
+  inset: 90px 64px 64px 64px; /* 이미지 내부의 위치 조정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3; /* 이미지 위에 표시되도록 z-index 설정 */
+}
+
+#S_Info h2 {
+  position: absolute; /* 이미지 위에 배치되도록 절대 위치 */
+  top: 20px; /* 원하는 위치로 조정 */
+  left: 50%;
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  font-size: 48px;
+  font-weight: 700;
+  animation: fadeInDown 1s both;
+}
+
+/*--------------------------------------------------------------
+# b_menu Section
+--------------------------------------------------------------*/
+.b_menu {
   overflow: visible;
   margin-bottom: 200px;
 }
 
-.Store_Info .section-title {
+.b_menu .section-title {
 }
 
-.Store_Info .section-title h2 {
+.b_menu .section-title h2 {
   font-size: 2.6rem;
   font-weight: 700;
   line-height: 1;
 }
 
-.Store_Info .section-title p {
-  color: var(--contrast-color);
+.b_menu .section-title p {
 }
 
-.Store_Info .services-carousel-wrap {
+.b_menu .services-carousel-wrap {
   position: relative;
   margin-bottom: -200px;
 }
 
-.Store_Info .swiper-wrapper {
+.b_menu .swiper-wrapper {
   height: auto;
 }
 
-.Store_Info .service-item {
+.b_menu .service-item {
   position: relative;
   overflow: hidden;
 }
 
-.Store_Info .service-item:before {
+.b_menu .service-item:before {
   content: "";
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);
   top: 0;
@@ -1080,12 +1111,12 @@ section,
   transition: 0.3s all ease;
 }
 
-.Store_Info .service-item img {
+.b_menu .service-item img {
   transition: 0.5s all ease;
   transform: scale(1);
 }
 
-.Store_Info .service-item .service-item-contents {
+.b_menu .service-item .service-item-contents {
   z-index: 9;
   position: absolute;
   bottom: 20px;
@@ -1097,33 +1128,33 @@ section,
   visibility: hidden;
 }
 
-.Store_Info .service-item .service-item-contents .service-item-category {
+.b_menu .service-item .service-item-contents .service-item-category {
   color: var(--accent-color);
   text-transform: uppercase;
 }
 
-.Store_Info .service-item .service-item-contents .service-item-title {
+.b_menu .service-item .service-item-contents .service-item-title {
   color: var(--contrast-color);
   margin-bottom: 0;
 }
 
-.Store_Info .service-item:hover:before {
+.b_menu .service-item:hover:before {
   opacity: 1;
   visibility: visible;
 }
 
-.Store_Info .service-item:hover .service-item-contents {
+.b_menu .service-item:hover .service-item-contents {
   transform: translateY(0%);
   opacity: 1;
   visibility: visible;
 }
 
-.Store_Info .service-item:hover img {
+.b_menu .service-item:hover img {
   transform: scale(1.2);
 }
 
-.Store_Info .navigation-prev,
-.Store_Info .navigation-next {
+.b_menu .navigation-prev,
+.b_menu .navigation-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1136,34 +1167,34 @@ section,
   transition: 0.3s all ease;
 }
 
-.Store_Info .navigation-prev i,
-.Store_Info .navigation-next i {
+.b_menu .navigation-prev i,
+.b_menu .navigation-next i {
   font-size: 2rem;
 }
 
-.Store_Info .navigation-prev:hover,
-.Store_Info .navigation-next:hover {
+.b_menu .navigation-prev:hover,
+.b_menu .navigation-next:hover {
   background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
-.Store_Info .navigation-prev {
+.b_menu .navigation-prev {
   left: 10px;
 }
 
-.Store_Info .navigation-next {
+.b_menu .navigation-next {
   right: 10px;
 }
 
-.Store_Info .swiper {
+.b_menu .swiper {
   padding-bottom: 50px;
 }
 
-.Store_Info .swiper-pagination {
+.b_menu .swiper-pagination {
   bottom: 0px;
 }
 
-.Store_Info .swiper-pagination .swiper-pagination-bullet {
+.b_menu .swiper-pagination .swiper-pagination-bullet {
   border-radius: 0;
   width: 20px;
   height: 4px;
@@ -1171,7 +1202,7 @@ section,
   opacity: 1;
 }
 
-.Store_Info .swiper-pagination .swiper-pagination-bullet-active {
+.b_menu .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color) !important;
 }
 
