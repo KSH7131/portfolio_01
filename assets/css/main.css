@@ -1033,34 +1033,55 @@ section,
 /*--------------------------------------------------------------
 # S_Info Section
 --------------------------------------------------------------*/
+
+#S_Info .content {
+  position: relative;
+  text-align: center;
+}
+
 #S_Info .img {
-  position: relative; /* 부모 요소로서의 위치 지정 */
-  inset: 0;
-  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1; /* 이미지가 기본적으로 가장 아래에 위치 */
+  height: auto;
+  z-index: 1; 
 }
 
-#S_Info .carousel-container {
-  position: absolute; /* 이미지 위에 배치되도록 절대 위치 */
-  inset: 90px 64px 64px 64px; /* 이미지 내부의 위치 조정 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 3; /* 이미지 위에 표시되도록 z-index 설정 */
+#S_Info .content-box {
+  position: relative;
 }
 
-#S_Info h2 {
-  position: absolute; /* 이미지 위에 배치되도록 절대 위치 */
-  top: 20px; /* 원하는 위치로 조정 */
+#S_Info .info_ex {
+  position: absolute; /* 텍스트를 이미지 위에 배치 */
+  top: 30vh; /* 이미지 상단에서 20% 위치 */
   left: 50%;
-  transform: translateX(-50%); /* 가로 중앙 정렬 */
-  font-size: 48px;
+  transform: translate(-50%, -50%);
+
+}
+
+#S_Info .info_ex h3 {
+  font-size: 2.6rem;
   font-weight: 700;
-  animation: fadeInDown 1s both;
+  line-height: 1.2;
+  margin: 0;
+}
+
+#S_Info .info_ex p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+#S_Info .store_btn {
+  position: absolute;
+  top: 60%; /* 버튼 위치 조정 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e0e621;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 /*--------------------------------------------------------------
