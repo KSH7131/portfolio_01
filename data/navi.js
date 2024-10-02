@@ -1,7 +1,7 @@
 const navidata = [
   {
     d1text : "브랜드 소개",
-    d1href : "#services",
+    d1href : "#intro",
     __target : ""
   },
   {
