@@ -766,7 +766,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 11.12vw 0;
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -802,13 +802,13 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# mainVisual Section
 --------------------------------------------------------------*/
-.hero {
+.mainVisual {
   padding: 0;
 }
 
-.hero .carousel {
+.mainVisual .carousel {
   width: 100%;
   min-height: calc(100vh - 100px);
   padding: 0;
@@ -817,7 +817,7 @@ section,
   position: relative;
 }
 
-.hero img {
+.mainVisual img {
   position: absolute;
   inset: 0;
   display: block;
@@ -827,7 +827,7 @@ section,
   z-index: 1;
 }
 
-.hero .carousel-item {
+.mainVisual .carousel-item {
   position: absolute;
   inset: 0;
   background-size: cover;
@@ -836,7 +836,7 @@ section,
   overflow: hidden;
 }
 
-.hero .carousel-item:before {
+.mainVisual .carousel-item:before {
   content: "";
   background: color-mix(in srgb, var(--background-color));
   position: absolute;
@@ -844,42 +844,47 @@ section,
   z-index: 2;
 }
 
-.hero .carousel-container {
+.mainVisual .carousel-container {
   position: absolute;
   inset: 90px 64px 64px 64px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   z-index: 3;
 }
 
-.hero h2 {
+.mainVisual .custom_color{
+  color: #e0e621;
+}
+
+.mainVisual h2 {
+  color: #2135e6;
   margin-bottom: 30px;
-  font-size: 48px;
+  font-size: 4vw;
   font-weight: 700;
-  animation: fadeInDown 1s both;
+  animation: fadeInDown 2s both;
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
+  .mainVisual h2 {
     font-size: 30px;
   }
 }
 
-.hero p {
+.mainVisual p {
   animation: fadeInDown 1s both 0.2s;
 }
 
 @media (min-width: 1024px) {
 
-  .hero h2,
-  .hero p {
+  .mainVisual h2,
+  .mainVisual p {
     max-width: 60%;
   }
 }
 
-.hero .btn-get-started {
+.mainVisual .btn-get-started {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-family: var(--heading-font);
@@ -894,47 +899,47 @@ section,
   animation: fadeInUp 1s both 0.4s;
 }
 
-.hero .btn-get-started:hover {
+.mainVisual .btn-get-started:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.hero .carousel-control-prev,
-.hero .carousel-control-next {
+.mainVisual .carousel-control-prev,
+.mainVisual .carousel-control-next {
   width: 10%;
   transition: 0.3s;
   opacity: 0.5;
 }
 
-.hero .carousel-control-prev:focus,
-.hero .carousel-control-next:focus {
+.mainVisual .carousel-control-prev:focus,
+.mainVisual .carousel-control-next:focus {
   opacity: 0.5;
 }
 
-.hero .carousel-control-prev:hover,
-.hero .carousel-control-next:hover {
+.mainVisual .carousel-control-prev:hover,
+.mainVisual .carousel-control-next:hover {
   opacity: 0.9;
 }
 
 @media (min-width: 1024px) {
 
-  .hero .carousel-control-prev,
-  .hero .carousel-control-next {
+  .mainVisual .carousel-control-prev,
+  .mainVisual .carousel-control-next {
     width: 5%;
   }
 }
 
-.hero .carousel-control-next-icon,
-.hero .carousel-control-prev-icon {
+.mainVisual .carousel-control-next-icon,
+.mainVisual .carousel-control-prev-icon {
   background: none;
   font-size: 32px;
   line-height: 1;
 }
 
-.hero .carousel-indicators {
+.mainVisual .carousel-indicators {
   list-style: none;
 }
 
-.hero .carousel-indicators li {
+.mainVisual .carousel-indicators li {
   cursor: pointer;
 }
 
@@ -995,6 +1000,10 @@ section,
   /* 비율 유지 */
 }
 
+#intro .custom{
+  padding-bottom: 5.56vw;
+}
+
 @media (max-width: 992px) {
   #intro .section-title {
     display: block;
@@ -1029,9 +1038,8 @@ section,
   }
 }
 
-
 /*--------------------------------------------------------------
-# Info Section
+# info Section 
 --------------------------------------------------------------*/
 
 #info {
@@ -1047,24 +1055,68 @@ section,
   background-size: cover;
   background-position: center;
 }
+
 #info .left-banner {
-  background-image: url('https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/um/img01.jpg?raw=true'); /* 좌측 이미지 경로 */
+  background-color: #053B9F;
 }
+
 #info .right-banner {
-  background-image: url('https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/um/img01.jpg?raw=true'); /* 우측 이미지 경로 */
+  background-color: #e0e621;
 }
-#info h2, #info p {
+
+/* h2 스타일 */
+#info h2 {
+  font-size: calc(calc(1.325rem + .6vw));
+  font-weight: 700;
   position: absolute;
-  left: 20px; /* 좌측 정렬을 위한 위치 조정 */
-  color: white; /* 글자 색상 */
+  top: 5vh;
+  left: 3vw;
 }
+
+#info .left-banner h2 {
+  color: white;
+}
+
 #info .right-banner h2 {
-  top: 20px; /* h2의 위치 조정 */
+  color: #053B9F;
 }
+
+
+/* 버튼 위치 */
+#info .btn {
+  background-color: #e0e621;
+  position: absolute;
+  top: 35vh;
+  left: 3vw;
+}
+
+#info .btn a{
+  color: #053B9F;
+  font-weight: 700;
+}
+
+/* 우측 배너 form */
 #info .right-banner form {
-  max-width: 200px;
-  top: 50px; /* form의 위치 조정 */
+  position: absolute;
+  display: flex; /* input과 버튼을 가로로 정렬 */
+  gap: 10px; /* input과 버튼 사이 간격 */
+  top: 35vh;
+  left: 3vw;
 }
+
+#info .right-banner form input {
+  flex: 1; /* input이 남는 공간을 차지하도록 설정 */
+}
+
+/* 이미지 스타일 */
+#info .right-banner .store-image {
+  position: absolute;
+  bottom: 0;
+  right: 2vw; /* 오른쪽에 배치 */
+  width: 22.5vw; /* 이미지 크기 설정 */
+  height: auto; /* 비율 유지 */
+}
+
 
 /*--------------------------------------------------------------
 # b_menu Section
