@@ -1,0 +1,195 @@
+@charset "UTF-8";
+#bigburger {
+  background-image: url("https://umopen.co.kr/child/img/layout/sec02/bg.png"); /* 배경 이미지 추가 */
+  background-size: 100% 50%; /* 너비는 100%, 높이는 50%로 조정 */
+  background-position: center bottom; /* 배경 이미지를 아래쪽으로 이동 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 없도록 설정 */
+  padding: 40px 0; /* 상하 패딩 추가 */
+}
+
+.context {
+  position: relative;
+  text-align: center;
+}
+
+.context .subtit {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #003b9f;
+}
+
+.context .tit {
+  position: relative;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  margin: 20px 0px;
+}
+
+.context .tit .on {
+  font-weight: bold;
+}
+
+.context .tit span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.context .tit span.on {
+  position: relative;
+  left: unset;
+  transform: none;
+  opacity: 1;
+}
+
+.context .txt {
+  position: relative;
+  font-size: 1.6rem;
+  line-height: 1.63;
+  color: #6A6A6A;
+}
+
+.context .txt span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.context .txt span.on {
+  position: relative;
+  left: unset;
+  transform: none;
+  opacity: 1;
+}
+
+.context .txt .on {
+  display: block; /* 현재 슬라이드에 해당하는 텍스트만 표시 */
+}
+
+.swiper-container {
+  max-width: 960px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
+  overflow: hidden;
+  position: relative;
+}
+
+/* 버튼 스타일 */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff; /* 버튼 텍스트 색상 */
+  width: 60px; /* 버튼 너비 */
+  height: 60px; /* 버튼 높이 */
+  background-color: rgba(0, 0, 0, 0.5); /* 버튼 배경색 */
+  border-radius: 50%; /* 버튼을 원형으로 만듭니다. */
+  display: flex;
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center; /* 가로 중앙 정렬 */
+  position: absolute; /* 절대 위치 설정 */
+  top: 50%; /* 세로 중앙 정렬 */
+  transform: translateY(-50%); /* 정확한 중앙으로 이동 */
+  z-index: 10; /* 다른 요소보다 위에 표시 */
+  transition: background-color 0.3s ease; /* 배경색 전환 애니메이션 */
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* 다음 버튼 위치 */
+.swiper-button-next {
+  right: 10px; /* 오른쪽 여백 */
+}
+
+/* 이전 버튼 위치 */
+.swiper-button-prev {
+  left: 10px; /* 왼쪽 여백 */
+}
+
+.swiper-slide {
+  text-align: center;
+}
+
+/* Hover 상태에서 배경색 변경 */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #e0e621; /* Hover 시 배경색 변경 */
+  color: #1E4FA9; /* Hover 시 텍스트 색상 변경 */
+}
+
+.swiper-pagination {
+  padding: 100px 0;
+  position: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bigburger .swiper-pagination-bullet {
+  margin: 0 2rem;
+  width: 200px;
+  height: auto;
+  padding: 2rem;
+  display: block;
+  background: #1E4FA9;
+  transition: background-color 0.3s ease;
+  opacity: 1;
+  /* 활성화된 상태에서 배경색 변경 */
+  /* 불렛 안의 이미지 스타일 */
+}
+#bigburger .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 225px;
+  background-color: #fff; /* 활성화 시 배경색을 흰색으로 변경 */
+}
+#bigburger .swiper-pagination-bullet img {
+  width: 100%; /* 이미지 너비 설정 */
+  height: auto; /* 자동 높이 */
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .context .subtit {
+    font-size: 2rem; /* 모바일 화면에서 크기 축소 */
+  }
+  .context .tit {
+    font-size: 2.5rem; /* 모바일 화면에서 크기 축소 */
+  }
+  .context .txt {
+    font-size: 1.4rem; /* 모바일 화면에서 크기 축소 */
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 50px; /* 버튼 크기 조정 */
+    height: 50px; /* 버튼 크기 조정 */
+  }
+  #bigburger .swiper-pagination-bullet {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .context .subtit {
+    font-size: 1.5rem; /* 작은 모바일 화면에서 크기 축소 */
+  }
+  .context .tit {
+    font-size: 2rem; /* 작은 모바일 화면에서 크기 축소 */
+  }
+  .context .txt {
+    font-size: 1.2rem; /* 작은 모바일 화면에서 크기 축소 */
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px; /* 버튼 크기 조정 */
+    height: 40px; /* 버튼 크기 조정 */
+  }
+  #bigburger .swiper-pagination-bullet {
+    display: none;
+  }
+}
