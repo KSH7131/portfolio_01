@@ -53,3 +53,17 @@ window.addEventListener('load', function() {
   titles[initialIndex].style.display = 'inline';
   texts[initialIndex].style.display = 'inline';
 });
+
+// 이미지 확장
+function toggleSize(card) {
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(c => {
+      if (c !== card) {
+          c.classList.remove('expanded');
+          c.classList.add('collapsed');
+      }
+  });
+
+  card.classList.toggle('expanded');
+  card.classList.toggle('collapsed');
+}

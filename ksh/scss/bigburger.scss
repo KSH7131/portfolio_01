@@ -1,6 +1,5 @@
-@charset "UTF-8";
 #bigburger {
-  background-image: url("https://umopen.co.kr/child/img/layout/sec02/bg.png"); /* 배경 이미지 추가 */
+  background-image: url('https://umopen.co.kr/child/img/layout/sec02/bg.png'); /* 배경 이미지 추가 */
   background-size: 100% 50%; /* 너비는 100%, 높이는 50%로 조정 */
   background-position: center bottom; /* 배경 이미지를 아래쪽으로 이동 */
   background-repeat: no-repeat; /* 배경 이미지 반복 없도록 설정 */
@@ -74,7 +73,7 @@
 }
 
 .swiper-container {
-  max-width: 960px; /* 최대 너비 설정 */
+  width: 960px; /* 최대 너비 설정 */
   margin: 0 auto; /* 중앙 정렬 */
   overflow: hidden;
   position: relative;
@@ -142,54 +141,64 @@
   background: #1E4FA9;
   transition: background-color 0.3s ease;
   opacity: 1;
+
   /* 활성화된 상태에서 배경색 변경 */
+  &.swiper-pagination-bullet-active {
+    width: 225px;
+    background-color: #fff; /* 활성화 시 배경색을 흰색으로 변경 */
+  }
+
   /* 불렛 안의 이미지 스타일 */
-}
-#bigburger .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 225px;
-  background-color: #fff; /* 활성화 시 배경색을 흰색으로 변경 */
-}
-#bigburger .swiper-pagination-bullet img {
-  width: 100%; /* 이미지 너비 설정 */
-  height: auto; /* 자동 높이 */
+  img {
+    width: 100%; /* 이미지 너비 설정 */
+    height: auto; /* 자동 높이 */
+  }
 }
 
 /* 반응형 스타일 */
+@media (max-width: 1200px) {
+  #bigburger .swiper-pagination-bullet {
+    display: none;
+  }
+
+
 @media (max-width: 768px) {
   .context .subtit {
     font-size: 2rem; /* 모바일 화면에서 크기 축소 */
   }
+
   .context .tit {
     font-size: 2.5rem; /* 모바일 화면에서 크기 축소 */
   }
+
   .context .txt {
     font-size: 1.4rem; /* 모바일 화면에서 크기 축소 */
   }
+
   .swiper-button-next,
   .swiper-button-prev {
     width: 50px; /* 버튼 크기 조정 */
     height: 50px; /* 버튼 크기 조정 */
   }
-  #bigburger .swiper-pagination-bullet {
-    display: none;
-  }
 }
+
 @media (max-width: 480px) {
   .context .subtit {
     font-size: 1.5rem; /* 작은 모바일 화면에서 크기 축소 */
   }
+
   .context .tit {
     font-size: 2rem; /* 작은 모바일 화면에서 크기 축소 */
   }
+
   .context .txt {
     font-size: 1.2rem; /* 작은 모바일 화면에서 크기 축소 */
   }
+
   .swiper-button-next,
   .swiper-button-prev {
     width: 40px; /* 버튼 크기 조정 */
     height: 40px; /* 버튼 크기 조정 */
   }
-  #bigburger .swiper-pagination-bullet {
-    display: none;
-  }
+}
 }

@@ -12,9 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Noto Sans KR", sans-serif, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Marcellus", sans-serif;
-  --nav-font: "Marcellus", sans-serif;
+  --default-font: "Pretendard", sans-serif, "Noto Sans KR", sans-serif, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Pretendard", sans-serif, "Noto Sans KR", sans-serif;
+  --nav-font: "Pretendard", sans-serif, "Noto Sans KR", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -101,6 +101,11 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+}
+
+.conainer{
+  width: 100%;
+  max-width: 1600px;
 }
 
 /* PHP Email Form Messages
@@ -766,7 +771,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 11.12vw 0;
+  padding: 11.12vw 0 0 0;
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -1044,7 +1049,6 @@ section,
 
 #info {
   margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
 }
@@ -1064,8 +1068,13 @@ section,
   background-color: #e0e621;
 }
 
-/* h2 스타일 */
-#info h2 {
+/* h2, h3 스타일 */
+#info p {
+  padding-bottom: 40px;
+}
+
+#info h3 {
+  text-align: left;
   font-size: calc(calc(1.325rem + .6vw));
   font-weight: 700;
   position: absolute;
@@ -1073,11 +1082,11 @@ section,
   left: 3vw;
 }
 
-#info .left-banner h2 {
+#info .left-banner h3 {
   color: white;
 }
 
-#info .right-banner h2 {
+#info .right-banner h3 {
   color: #053B9F;
 }
 
@@ -1109,34 +1118,136 @@ section,
 }
 
 /* 이미지 스타일 */
+#info .left-banner .franchise {
+  position: absolute;
+  bottom: 2vh;
+  right: 2vw; /* 오른쪽에 배치 */
+  width: 12.5vw; /* 이미지 크기 설정 */
+  height: auto; /* 비율 유지 */
+}
+
 #info .right-banner .store-image {
   position: absolute;
-  bottom: 0;
+  bottom: 5vh;
   right: 2vw; /* 오른쪽에 배치 */
   width: 22.5vw; /* 이미지 크기 설정 */
   height: auto; /* 비율 유지 */
 }
 
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-.testimonials .testimonial img {
-  width: 100px;
-  height: 100px;
+/* -----------------------
+Compettion Section
+------------------------- */
+#Compettion .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Allow divs to stretch when expanded */
+  transition: all 0.4s ease; /* Smooth transition */
+  gap: 10px;
+}
+
+#Compettion .card {
+  width: calc(25% - 200px);
+  height: 50vh;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#Compettion .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+#Compettion .card p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  text-align: left;
+}
+
+#Compettion .card.expanded {
+  flex-grow: 2; 
+}
+
+#Compettion .card.collapsed {
+  flex-grow: 1;
+}
+
+#Compettion .button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+#Compettion .card:hover .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Compettion .custom-button {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
   border-radius: 50%;
-  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
 }
 
-.testimonials .testimonial blockquote p {
-  font-size: 20px;
-  color: var(--default-color);
-  font-weight: 500;
+#Compettion .custom-button::before,
+#Compettion .custom-button::after {
+  content: '';
+  position: absolute;
+  background-color: white;
 }
 
-.testimonials .testimonial .client-name {
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  color: var(--accent-color);
+#Compettion .custom-button::before {
+  width: 2px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#Compettion .custom-button::after {
+  height: 2px;
+  width: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  #Compettion .card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  #Compettion .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  #Compettion .card {
+    width: 100%;
+  }
 }
 
 /*--------------------------------------------------------------
