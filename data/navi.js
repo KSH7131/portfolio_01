@@ -4,28 +4,30 @@ const navidata = [
     d1href : "#intro",
     __target : ""
   },
-  {
-    d1text : "브랜드 만족도",
-    d1href : "#about",
-    __target : ""
-  },
-  {
-    d1text:"브랜드 경쟁력",
-    d1href:"#about-3",
-    target : ""
 
+
+{
+  d1text:"메뉴 소개",
+  d1href:"#b_menu",
+  target : ""
+},
+
+{
+  d1text:"브랜드 경쟁력",
+  d1href:"#Compettion",
+  target : ""
+},
+
+{
+  d1text : "브랜드 만족도",
+  d1href : "#about",
+  __target : ""
+},
+
+{
+  d1text:"매장 안내",
+  d1href:"#info",
+  target : ""
 }
-,
-  {
-    d1text:"50호점 한정 혜택",
-    d1href:"#services-2",
-    target : ""
-}
-,
-  {
-    d1text:"가맹 문의",
-    d1href:"#recent-post",
-    target : ""
-}
+
 ];
-
