@@ -374,7 +374,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 11.12vw 0 0 0;
+  padding: 11.12vh 0 0 0;
   scroll-margin-top: 100px;
   overflow: clip;
 }
@@ -915,80 +915,90 @@ Compettion Section
 }
 
 /*--------------------------------------------------------------
-# Recent Posts Section
+# satisfaction Section
 --------------------------------------------------------------*/
-.recent-posts .post-item {
-  background: var(--surface-color);
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+.rolling-section {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-.recent-posts .post-item .post-img img {
-  transition: 0.5s;
+/* 마퀴 애니메이션 */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px; /* 마퀴들 사이에 여백 추가 */
 }
 
-.recent-posts .post-item .post-date {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  text-transform: uppercase;
-  font-size: 13px;
-  padding: 6px 12px;
-  font-weight: 500;
+/* 마퀴 1번: 오른쪽에서 왼쪽으로 이동 */
+.marquee-ani.marquee-left {
+  display: flex;
+  animation: marquee-left 15s linear infinite;
+  width: 200%; /* 복제된 이미지를 포함한 너비 */
 }
 
-.recent-posts .post-item .post-content {
-  padding: 30px;
+.marquee-ani.marquee-left img {
+  width: 100vw; /* 두 개의 이미지가 화면을 꽉 채우도록 설정 */
+  height: auto;
 }
 
-.recent-posts .post-item .post-title {
-  color: var(--heading-color);
-  font-size: 20px;
-  font-weight: 700;
-  transition: 0.3s;
-  margin-bottom: 15px;
+/* 마퀴 2번: 왼쪽에서 오른쪽으로 이동 */
+.marquee-ani.marquee-right {
+  display: flex;
+  animation: marquee-right 15s linear infinite;
+  width: 200%; /* 복제된 이미지를 포함한 너비 */
 }
 
-.recent-posts .post-item .meta i {
-  font-size: 16px;
-  color: var(--accent-color);
+.marquee-ani.marquee-right img {
+  width: 100vw; /* 두 개의 이미지가 화면을 꽉 채우도록 설정 */
+  height: auto;
 }
 
-.recent-posts .post-item .meta span {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+/* 오른쪽에서 왼쪽으로 가는 애니메이션 */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.recent-posts .post-item hr {
-  color: color-mix(in srgb, var(--default-color), transparent 80%);
-  margin: 20px 0;
+/* 왼쪽에서 오른쪽으로 가는 애니메이션 */
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-.recent-posts .post-item .readmore {
+#satisfaction .section-title{
   display: flex;
   align-items: center;
-  font-weight: 600;
+  justify-content: flex-start;
+  padding: 11.12vh 0; /* 상하 패딩 추가 */
+}
+
+#satisfaction .section-title h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
   line-height: 1;
-  transition: 0.3s;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin-right: 20px;
+  text-align: left;
 }
 
-.recent-posts .post-item .readmore i {
-  line-height: 0;
-  margin-left: 6px;
-  font-size: 16px;
+#satisfaction .section-title .txt {
+  font-size: 1.4rem;
+  text-align: left;
 }
 
-.recent-posts .post-item:hover .post-title,
-.recent-posts .post-item:hover .readmore {
-  color: var(--accent-color);
+/* 두 개의 이미지가 한 줄에 보이는 영역 */
+.image-row {
+  display: flex;
+  justify-content: center; /* 이미지를 가운데 정렬 */
+  gap: 20px; /* 이미지 사이 간격 */
+  margin: 20px 0; /* 상하 여백 */
 }
 
-.recent-posts .post-item:hover .post-img img {
-  transform: scale(1.1);
+.image-row img {
+  width: 30%; /* 각 이미지 크기 조정 */
+  height: auto;
 }
+
 
 /*--------------------------------------------------------------
 # Call To Action Section

@@ -164,4 +164,5 @@
     selector: '.glightbox'
   });
 
-})();
+
+})
