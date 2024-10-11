@@ -3,6 +3,7 @@
 # Global Header
 --------------------------------------------------------------*/
 .header {
+  position: fixed;
   color: var(--default-color);
   background-color: #053B9F;
   padding: 20px 0;
@@ -10,7 +11,7 @@
   z-index: 997;
 }
 
-.custom-container{
+.custom-container {
   width: 100%;
   max-width: 1600px;
 }

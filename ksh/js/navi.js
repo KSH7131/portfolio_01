@@ -28,3 +28,15 @@
         card.classList.toggle('expanded');
         card.classList.toggle('collapsed');
     }
+
+
+    const mainVisual = document.querySelector("#mainVisual");
+    const headerh = document.querySelector("#header");
+
+    mainVisual.style.paddingTop =headerh.offsetHeight + 'px';
+
+
+    window.addEventListener('resize', function(){
+
+      mainVisual.style.paddingTop =headerh.offsetHeight + 'px';
+    })

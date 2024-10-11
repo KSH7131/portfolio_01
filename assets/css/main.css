@@ -78,6 +78,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  overflow-x: hidden;
 }
 
 a {
@@ -240,42 +241,6 @@ h6 {
 }
 
 
-
-/*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
-#preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 999999;
-  overflow: hidden;
-  background: var(--background-color);
-  transition: all 0.6s ease-out;
-}
-
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
-}
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
@@ -413,83 +378,53 @@ section,
 # mainVisual Section
 --------------------------------------------------------------*/
 .mainVisual {
-  padding: 0;
+  flex-grow: 1;
 }
 
-.mainVisual .carousel {
-  width: 100%;
-  min-height: calc(100vh - 100px);
-  padding: 0;
-  margin: 0;
-  /* background-color: var(--background-color); */
+.mainVisual .swiper-container {
+  width: 100%; /* 100% 너비 */
+  height: auto; /* 높이를 자동으로 조정 */
+  aspect-ratio: 16 / 9; /* 가로 세로 비율 (예: 16:9) */
+}
+
+.mainVisual .swiper-slide {
   position: relative;
-}
-
-.mainVisual img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.mainVisual .carousel-item {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.mainVisual .carousel-item:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color));
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-.mainVisual .carousel-container {
-  position: absolute;
-  inset: 90px 64px 64px 64px;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  flex-direction: column;
-  z-index: 3;
-}
-
-.mainVisual .custom_color{
-  color: #e0e621;
+  overflow: hidden; /* 이미지가 잘리지 않도록 */
+  height: 100%; /* 슬라이드의 높이를 부모 컨테이너의 높이로 설정 */
 }
 
 .mainVisual h2 {
+  text-align: left;
+  padding-top: 5vh; /* 패딩을 줄여서 높이 조정 */
+  padding-left: 10vw; 
   color: #2135e6;
-  margin-bottom: 30px;
   font-size: 4vw;
   font-weight: 700;
   animation: fadeInDown 2s both;
 }
 
-@media (max-width: 768px) {
-  .mainVisual h2 {
-    font-size: 30px;
-  }
+.mainVisual .swiper-slide img {
+  width: 100%; /* 100% 너비 */
+  height: 100%; /* 100% 높이 */
+  object-fit: cover; /* 비율 유지 */
+  position: absolute; /* 위치를 절대적으로 설정 */
+  top: 0; /* 상단 정렬 */
+  left: 0; /* 좌측 정렬 */
 }
 
-.mainVisual p {
-  animation: fadeInDown 1s both 0.2s;
+.mainVisual .swiper-button-next,
+.mainVisual .swiper-button-prev {
+  color: #fff; /* 버튼 색상 */
 }
 
-@media (min-width: 1024px) {
+.mainVisual .swiper-pagination {
+  bottom: 20px; /* 페이지네이션의 위치 조정 */
+  left: 50%; /* 수평 중앙 정렬 */
+  transform: translateX(-50%); /* 중앙 정렬 보정 */
+}
 
-  .mainVisual h2,
-  .mainVisual p {
-    max-width: 60%;
-  }
+.mainVisual .custom_color {
+  color: #e0e621;
 }
 
 .mainVisual .btn-get-started {
@@ -511,52 +446,11 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.mainVisual .carousel-control-prev,
-.mainVisual .carousel-control-next {
-  width: 10%;
-  transition: 0.3s;
-  opacity: 0.5;
-}
-
-.mainVisual .carousel-control-prev:focus,
-.mainVisual .carousel-control-next:focus {
-  opacity: 0.5;
-}
-
-.mainVisual .carousel-control-prev:hover,
-.mainVisual .carousel-control-next:hover {
-  opacity: 0.9;
-}
-
-@media (min-width: 1024px) {
-
-  .mainVisual .carousel-control-prev,
-  .mainVisual .carousel-control-next {
-    width: 5%;
-  }
-}
-
-.mainVisual .carousel-control-next-icon,
-.mainVisual .carousel-control-prev-icon {
-  background: none;
-  font-size: 32px;
-  line-height: 1;
-}
-
-.mainVisual .carousel-indicators {
-  list-style: none;
-}
-
-.mainVisual .carousel-indicators li {
-  cursor: pointer;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
   }
-
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -568,7 +462,6 @@ section,
     opacity: 0;
     transform: translate3d(0, -100%, 0);
   }
-
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -645,7 +538,6 @@ section,
     /* 모바일에서 크기 조정 */
   }
 }
-
 
 /* -----------------------
 Compettion Section
@@ -999,6 +891,59 @@ Compettion Section
   height: auto;
 }
 
+
+
+.rolling {
+  position: absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  padding:100px 0px 60px;
+  z-index:10;
+}
+
+.rolling::after {
+  content:"";
+  display: block;
+  position: absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  width:200vw;
+  height:100%;
+  z-index:-1;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9472163865546218) 0%, rgba(242,242,242,0.9528186274509804) 60%);
+}
+
+.rolling .roliing-wrap {
+  position: relative;
+  width:100%;
+  height: 385px;
+}
+
+.rolling .rolling-ani {
+  display:flex;
+  width:calc(330px * 14);
+  animation: marquee3 forwards infinite linear 30s;
+}
+
+.rolling .rolling-ani .box {
+  display: inline-block;
+  width:290px;
+  height:auto;
+  margin-right:40px;
+}
+
+@keyframes marquee3 {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform:translateX(calc(-330px * 5));
+	}
+}
 
 /*--------------------------------------------------------------
 # Call To Action Section

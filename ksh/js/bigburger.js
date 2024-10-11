@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
-  var swiper = new Swiper('#bigburger .swiper-container', {
+  // Bigburger Swiper 초기화
+  var swiperBigburger = new Swiper('#bigburger .swiper-container', {
     slidesPerView: 1, // 한 번에 1개의 슬라이드 표시
     spaceBetween: 0, // 슬라이드 간 간격
     autoplay: {
@@ -24,7 +25,6 @@ window.addEventListener('load', function() {
       nextEl: '#bigburger .swiper-button-next', // 다음 버튼
       prevEl: '#bigburger .swiper-button-prev', // 이전 버튼
     },
-
     on: {
       slideChange: function() {
         const index = this.activeIndex; // 현재 활성 슬라이드 인덱스
@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
   });
 
   // 초기 상태에서 첫 번째 슬라이드에 해당하는 텍스트만 표시
-  const initialIndex = swiper.activeIndex;
+  const initialIndex = swiperBigburger.activeIndex;
   const titles = document.querySelectorAll('.context .tit span');
   const texts = document.querySelectorAll('.context .txt span');
 
@@ -52,6 +52,24 @@ window.addEventListener('load', function() {
 
   titles[initialIndex].style.display = 'inline';
   texts[initialIndex].style.display = 'inline';
+
+  // Main Visual Swiper 초기화
+  const swiperMainVisual = new Swiper('#mainVisual .swiper-container', {
+    loop: true,  // 슬라이드가 반복되도록 설정
+    autoplay: {
+      delay: 5000,  // 5초마다 자동으로 슬라이드 전환
+      disableOnInteraction: false,  // 유저의 상호작용 후에도 자동 재생 유지
+    },
+    navigation: {
+      nextEl: '#mainVisual .swiper-button-next',  // 다음 슬라이드로 가는 버튼
+      prevEl: '#mainVisual .swiper-button-prev',  // 이전 슬라이드로 가는 버튼
+    },
+    pagination: {
+      el: '#mainVisual .swiper-pagination',  // 페이지네이션 위치
+      clickable: true,  // 페이지네이션을 클릭 가능하게 설정
+    },
+    effect: 'fade',  // 슬라이드 전환 효과를 페이드로 설정
+  });  
 });
 
 // 이미지 확장
@@ -67,3 +85,13 @@ function toggleSize(card) {
   card.classList.toggle('expanded');
   card.classList.toggle('collapsed');
 }
+
+function aosInit() {
+  AOS.init({
+    duration: 600,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  });
+}
+window.addEventListener('load', aosInit);
