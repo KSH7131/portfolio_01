@@ -1,3 +1,4 @@
+
 #bigburger {
   background-image: url('https://umopen.co.kr/child/img/layout/sec02/bg.png');
   /* 배경 이미지 추가 */
@@ -188,7 +189,6 @@
     display: none;
   }
 
-
   @media (max-width: 768px) {
     .context .subtit {
       font-size: 2rem;
@@ -219,7 +219,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 576px) {
     .context .subtit {
       font-size: 1.5rem;
       /* 작은 모바일 화면에서 크기 축소 */

@@ -104,7 +104,7 @@ h6 {
   font-family: var(--heading-font);
 }
 
-.container{
+.container {
   width: 100%;
   max-width: 1600px;
 }
@@ -374,6 +374,26 @@ section,
   margin-bottom: 0;
 }
 
+
+@media (max-width: 992px) {
+  .section-title h2 {
+    font-size: 2.0rem;
+  }
+  .section-title p{
+    font-size: 1.0rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-title p{
+    font-size: 0.8rem;
+  }
+}
+
 /*--------------------------------------------------------------
 # mainVisual Section
 --------------------------------------------------------------*/
@@ -382,21 +402,27 @@ section,
 }
 
 .mainVisual .swiper-container {
-  width: 100%; /* 100% 너비 */
-  height: auto; /* 높이를 자동으로 조정 */
-  aspect-ratio: 16 / 9; /* 가로 세로 비율 (예: 16:9) */
+  width: 100%;
+  /* 100% 너비 */
+  height: auto;
+  /* 높이를 자동으로 조정 */
+  aspect-ratio: 16 / 9;
+  /* 가로 세로 비율 (예: 16:9) */
 }
 
 .mainVisual .swiper-slide {
   position: relative;
-  overflow: hidden; /* 이미지가 잘리지 않도록 */
-  height: 100%; /* 슬라이드의 높이를 부모 컨테이너의 높이로 설정 */
+  overflow: hidden;
+  /* 이미지가 잘리지 않도록 */
+  height: 100%;
+  /* 슬라이드의 높이를 부모 컨테이너의 높이로 설정 */
 }
 
 .mainVisual h2 {
   text-align: left;
-  padding-top: 5vh; /* 패딩을 줄여서 높이 조정 */
-  padding-left: 10vw; 
+  padding-top: 5vh;
+  /* 패딩을 줄여서 높이 조정 */
+  padding-left: 10vw;
   color: #2135e6;
   font-size: 4vw;
   font-weight: 700;
@@ -404,23 +430,33 @@ section,
 }
 
 .mainVisual .swiper-slide img {
-  width: 100%; /* 100% 너비 */
-  height: 100%; /* 100% 높이 */
-  object-fit: cover; /* 비율 유지 */
-  position: absolute; /* 위치를 절대적으로 설정 */
-  top: 0; /* 상단 정렬 */
-  left: 0; /* 좌측 정렬 */
+  width: 100%;
+  /* 100% 너비 */
+  height: 100%;
+  /* 100% 높이 */
+  object-fit: cover;
+  /* 비율 유지 */
+  position: absolute;
+  /* 위치를 절대적으로 설정 */
+  top: 0;
+  /* 상단 정렬 */
+  left: 0;
+  /* 좌측 정렬 */
 }
 
 .mainVisual .swiper-button-next,
 .mainVisual .swiper-button-prev {
-  color: #fff; /* 버튼 색상 */
+  color: #fff;
+  /* 버튼 색상 */
 }
 
 .mainVisual .swiper-pagination {
-  bottom: 20px; /* 페이지네이션의 위치 조정 */
-  left: 50%; /* 수평 중앙 정렬 */
-  transform: translateX(-50%); /* 중앙 정렬 보정 */
+  bottom: 20px;
+  /* 페이지네이션의 위치 조정 */
+  left: 50%;
+  /* 수평 중앙 정렬 */
+  transform: translateX(-50%);
+  /* 중앙 정렬 보정 */
 }
 
 .mainVisual .custom_color {
@@ -451,6 +487,7 @@ section,
     opacity: 0;
     transform: translate3d(0, 100%, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -462,6 +499,7 @@ section,
     opacity: 0;
     transform: translate3d(0, -100%, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -479,14 +517,12 @@ section,
 }
 
 #intro .section-title h2 {
-  font-size: 2.6rem;
   font-weight: 700;
   line-height: 1;
   margin-right: 20px;
 }
 
 #intro .section-title .txt {
-  font-size: 1.4rem;
   text-align: left;
 }
 
@@ -501,7 +537,7 @@ section,
   /* 비율 유지 */
 }
 
-#intro .custom{
+#intro .custom {
   padding-bottom: 5.56vw;
 }
 
@@ -515,10 +551,12 @@ section,
     font-size: 2.0rem;
     margin-right: 0;
     /* Remove right margin when stacked */
-    text-align: left;
+    text-align: center;
   }
 
   #intro .section-title .txt {
+    padding-top: 2vh;
+    text-align: center;
     font-size: 1.0rem;
   }
 
@@ -549,14 +587,18 @@ Compettion Section
 }
 
 #Compettion .section-title h2 {
-  font-size: 2.6rem;
+  text-align: left;
   font-weight: 700;
   line-height: 1;
   margin-right: 20px;
 }
 
+#Compettion .section-title h2 br {
+  display: none;
+}
+
+
 #Compettion .section-title .txt {
-  font-size: 1.4rem;
   text-align: left;
 }
 
@@ -564,7 +606,8 @@ Compettion Section
 #Compettion .container {
   display: flex;
   /* align-items: stretch; Allow divs to stretch when expanded */
-  transition: all 0.4s ease; /* Smooth transition */
+  transition: all 0.4s ease;
+  /* Smooth transition */
   gap: 10px;
 }
 
@@ -589,8 +632,8 @@ Compettion Section
   transition: transform 0.4s ease;
 }
 
-#Compettion .card p {
-  font-size: 2rem;
+#Compettion .off_p {
+  font-size: 1.6vw;
   font-weight: 700;
   position: absolute;
   top: 0;
@@ -601,8 +644,8 @@ Compettion Section
   text-align: left;
 }
 
-#Compettion .card em {
-  font-size: 1.6rem;
+#Compettion .off_em {
+  font-size: 1vw;
   font-weight: 200;
   position: absolute;
   bottom: 0;
@@ -611,12 +654,74 @@ Compettion Section
   padding: 20px;
   color: white;
   text-align: left;
-  writing-mode: vertical-rl; /* 세로 방향으로 텍스트 출력 */
-  transform: rotate(180deg); /* 180도 회전 */
+  writing-mode: vertical-rl;
+  /* 세로 방향으로 텍스트 출력 */
+  transform: rotate(180deg);
+  /* 180도 회전 */
+}
+
+#Compettion .box_on {
+  font-size: 1.6vw;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  text-align: left;
+  visibility: hidden;
+}
+
+#Compettion .box_on strong {
+  padding-left: 20px;
+  color: #e0e621;
+}
+
+#Compettion dl {
+  position: absolute;
+  font-size: 1.2vw;
+  font-weight: 400;
+  bottom: 0;
+  left: 20px;
+  color: white;
+  text-align: left;
+  visibility: hidden;
+}
+
+#Compettion dl strong {
+  color: #e0e621;
+  font-size: 1.6vw;
+  font-weight: 700;
+}
+
+#Compettion dl strong span {
+  color: white;
+}
+
+#Compettion dl strong em {
+  font-size: 1.4vw;
+  color: white;
 }
 
 #Compettion .card.expanded {
-  flex-grow: 2; 
+  flex-grow: 2;
+}
+
+#Compettion .card.expanded img {
+  flex-grow: 2;
+  filter: brightness(0.8);
+  /* 이미지를 어둡게 만듬 */
+}
+
+#Compettion .card.expanded .off_p,
+#Compettion .card.expanded .off_em {
+  visibility: hidden;
+}
+
+#Compettion .card.expanded .box_on,
+#Compettion .card.expanded dl {
+  visibility: visible;
 }
 
 #Compettion .card.collapsed {
@@ -670,43 +775,49 @@ Compettion Section
   transform: translate(-50%, -50%);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 1200px) {
-  #Compettion .card {
-    width: calc(33.33% - 20px);
+
+  #Compettion .section-title h2{
+    font-size: 2.0rem;
+  }
+
+  #Compettion .section-title h2 br{
+    display: block;
   }
 }
 
+
 @media (max-width: 992px) {
-  #Compettion .card {
-    width: calc(50% - 20px);
+  #Compettion .section-title {
+    display: block;
+    /* Change to block to stack elements */
   }
 
   #Compettion .section-title h2 {
     font-size: 2.0rem;
     margin-right: 0;
-    /* Remove right margin when stacked */
-    text-align: left;
+    text-align: center;
   }
 
   #Compettion .section-title .txt {
+    padding-top: 2vh;
+    text-align: center;
     font-size: 1.0rem;
+  }
+
+  #Compettion .section-title h2 br{
+    display: none;
   }
 }
 
 @media (max-width: 576px) {
-  #Compettion .card {
-    width: 100%;
-  }
-
   #Compettion .section-title h2 {
     font-size: 1.6rem;
-    /* 모바일에서 크기 조정 */
   }
 
   #Compettion .section-title .txt {
     font-size: 0.8rem;
-    /* 모바일에서 크기 조정 */
   }
 }
 
@@ -722,7 +833,8 @@ Compettion Section
 
 #info .banner {
   position: relative;
-  height: 50vh; /* 원하는 높이로 조절 */
+  height: 50vh;
+  /* 원하는 높이로 조절 */
   background-size: cover;
   background-position: center;
 }
@@ -771,7 +883,7 @@ Compettion Section
 }
 
 
-#info .btn a{
+#info .btn a {
   color: #053B9F;
   font-weight: 700;
 }
@@ -779,31 +891,73 @@ Compettion Section
 /* 우측 배너 form */
 #info .right-banner form {
   position: absolute;
-  display: flex; /* input과 버튼을 가로로 정렬 */
-  gap: 10px; /* input과 버튼 사이 간격 */
+  display: flex;
+  /* input과 버튼을 가로로 정렬 */
+  gap: 10px;
+  /* input과 버튼 사이 간격 */
   top: 35vh;
   left: 3vw;
 }
 
 #info .right-banner form input {
-  flex: 1; /* input이 남는 공간을 차지하도록 설정 */
+  flex: 1;
+  /* input이 남는 공간을 차지하도록 설정 */
 }
 
 /* 이미지 스타일 */
 #info .left-banner .franchise {
   position: absolute;
   bottom: 2vh;
-  right: 2vw; /* 오른쪽에 배치 */
-  width: 12.5vw; /* 이미지 크기 설정 */
-  height: auto; /* 비율 유지 */
+  right: 2vw;
+  /* 오른쪽에 배치 */
+  width: 12.5vw;
+  /* 이미지 크기 설정 */
+  height: auto;
+  /* 비율 유지 */
 }
 
 #info .right-banner .store-image {
   position: absolute;
   bottom: 5vh;
-  right: 2vw; /* 오른쪽에 배치 */
-  width: 22.5vw; /* 이미지 크기 설정 */
-  height: auto; /* 비율 유지 */
+  right: 2vw;
+  /* 오른쪽에 배치 */
+  width: 22.5vw;
+  /* 이미지 크기 설정 */
+  height: auto;
+  /* 비율 유지 */
+}
+
+
+@media (max-width: 992px) {
+  #info .section-title h2 {
+    font-size: 2.0rem;
+  }
+
+  #info .section-title .txt {
+    padding-top: 2vh;
+    font-size: 1.0rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #info .left-banner .franchise {
+    width: 25vw;
+  }
+  #info .right-banner .store-image {
+    width: 45vw;
+  }
+}
+
+@media (max-width: 576px) {
+  #info .section-title h2 {
+    font-size: 1.6rem;
+    /* 모바일에서 크기 조정 */
+  }
+
+  #info .section-title .txt {
+    font-size: 0.8rem;
+    /* 모바일에서 크기 조정 */
+  }
 }
 
 /*--------------------------------------------------------------
@@ -819,18 +973,21 @@ Compettion Section
 .marquee-container {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 20px; /* 마퀴들 사이에 여백 추가 */
+  margin-bottom: 20px;
+  /* 마퀴들 사이에 여백 추가 */
 }
 
 /* 마퀴 1번: 오른쪽에서 왼쪽으로 이동 */
 .marquee-ani.marquee-left {
   display: flex;
   animation: marquee-left 15s linear infinite;
-  width: 200%; /* 복제된 이미지를 포함한 너비 */
+  width: 200%;
+  /* 복제된 이미지를 포함한 너비 */
 }
 
 .marquee-ani.marquee-left img {
-  width: 100vw; /* 두 개의 이미지가 화면을 꽉 채우도록 설정 */
+  width: 100vw;
+  /* 두 개의 이미지가 화면을 꽉 채우도록 설정 */
   height: auto;
 }
 
@@ -838,31 +995,44 @@ Compettion Section
 .marquee-ani.marquee-right {
   display: flex;
   animation: marquee-right 15s linear infinite;
-  width: 200%; /* 복제된 이미지를 포함한 너비 */
+  width: 200%;
+  /* 복제된 이미지를 포함한 너비 */
 }
 
 .marquee-ani.marquee-right img {
-  width: 100vw; /* 두 개의 이미지가 화면을 꽉 채우도록 설정 */
+  width: 100vw;
+  /* 두 개의 이미지가 화면을 꽉 채우도록 설정 */
   height: auto;
 }
 
 /* 오른쪽에서 왼쪽으로 가는 애니메이션 */
 @keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* 왼쪽에서 오른쪽으로 가는 애니메이션 */
 @keyframes marquee-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
-#satisfaction .section-title{
+#satisfaction .section-title {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 11.12vh 0; /* 상하 패딩 추가 */
+  padding: 11.12vh 0;
+  /* 상하 패딩 추가 */
 }
 
 #satisfaction .section-title h2 {
@@ -881,68 +1051,83 @@ Compettion Section
 /* 두 개의 이미지가 한 줄에 보이는 영역 */
 .image-row {
   display: flex;
-  justify-content: center; /* 이미지를 가운데 정렬 */
-  gap: 20px; /* 이미지 사이 간격 */
-  margin: 20px 0; /* 상하 여백 */
+  justify-content: center;
+  /* 이미지를 가운데 정렬 */
+  gap: 20px;
+  /* 이미지 사이 간격 */
+  margin: 20px 0;
+  /* 상하 여백 */
 }
 
 .image-row img {
-  width: 30%; /* 각 이미지 크기 조정 */
+  width: 30%;
+  /* 각 이미지 크기 조정 */
   height: auto;
+  transition: 0.4s ease;
+  /* 부드러운 전환 */
 }
-
-
 
 .rolling {
   position: absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  padding:100px 0px 60px;
-  z-index:10;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 100px 0px 60px;
+  z-index: 10;
 }
 
 .rolling::after {
-  content:"";
+  content: "";
   display: block;
   position: absolute;
-  top:0;
-  left:50%;
+  top: 0;
+  left: 50%;
   transform: translateX(-50%);
-  width:200vw;
-  height:100%;
-  z-index:-1;
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,0.9472163865546218) 0%, rgba(242,242,242,0.9528186274509804) 60%);
+  width: 200vw;
+  height: 100%;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9472163865546218) 0%, rgba(242, 242, 242, 0.9528186274509804) 60%);
 }
 
 .rolling .roliing-wrap {
   position: relative;
-  width:100%;
+  width: 100%;
   height: 385px;
 }
 
 .rolling .rolling-ani {
-  display:flex;
-  width:calc(330px * 14);
+  display: flex;
+  width: calc(330px * 14);
   animation: marquee3 forwards infinite linear 30s;
 }
 
 .rolling .rolling-ani .box {
   display: inline-block;
-  width:290px;
-  height:auto;
-  margin-right:40px;
+  width: 290px;
+  height: auto;
+  margin-right: 40px;
 }
 
 @keyframes marquee3 {
-	from {
-		transform: translateX(0);
-	}
+  from {
+    transform: translateX(0);
+  }
 
-	to {
-		transform:translateX(calc(-330px * 5));
-	}
+  to {
+    transform: translateX(calc(-330px * 5));
+  }
+}
+
+@media (max-width: 992px) {
+
+  .image-row {
+    display: none;
+  }
+
+  .rolling::after {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
