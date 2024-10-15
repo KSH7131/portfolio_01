@@ -79,8 +79,8 @@
   /* 현재 슬라이드에 해당하는 텍스트만 표시 */
 }
 
-.swiper-container {
-  width: 960px;
+#bigburger .swiper-container {
+  max-width: 960px;
   /* 최대 너비 설정 */
   margin: 0 auto;
   /* 중앙 정렬 */
@@ -187,7 +187,7 @@
     display: none;
   }
 }
-@media (max-width: 1200px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .context .subtit {
     font-size: 2rem;
     /* 모바일 화면에서 크기 축소 */
@@ -212,7 +212,7 @@
     font-size: 1rem;
   }
 }
-@media (max-width: 1200px) and (max-width: 480px) {
+@media (max-width: 576px) {
   .context .subtit {
     font-size: 1.5rem;
     /* 작은 모바일 화면에서 크기 축소 */
@@ -224,13 +224,5 @@
   .context .txt {
     font-size: 1.2rem;
     /* 작은 모바일 화면에서 크기 축소 */
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
-    display: none;
-  }
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    display: none;
   }
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -6,122 +7,74 @@
 }
 
 .footer .footer-top {
-  background-color: color-mix(in srgb, var(--background-color), white 5%);
-  padding-top: 50px;
+  padding: 50px 0;
 }
 
-.footer .footer-about .logo {
-  line-height: 1;
-  margin-bottom: 25px;
+.footer .footer-contact {
+  font-size: 0.75vw;
+  line-height: 2;
+  height: 100%;
+  text-align: center;
+  padding-bottom: 0;
 }
 
-.footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
+.footer .footer-contact ul {
+  display: flex; /* 수평 정렬을 위한 flex 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  padding: 0; /* 기본 패딩 제거 */
 }
 
-.footer .footer-about .logo span {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.footer .footer-about p {
-  font-size: 14px;
-  font-family: var(--heading-font);
-}
-
-.footer h4 {
-  font-size: 16px;
-  font-weight: 600;
+.footer .footer-contact li {
   position: relative;
-  padding-bottom: 12px;
-  margin-bottom: 15px;
-}
-
-.footer h4::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--accent-color);
-  bottom: 0;
-  left: 0;
-}
-
-.footer .footer-links {
-  margin-bottom: 30px;
-}
-
-.footer .footer-links ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  font-weight: 700;
 }
 
-.footer .footer-links ul i {
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 0;
+.footer .footer-contact li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%; /* 세로 중앙 정렬 */
+  right: -0.1vw; /* 수정된 값: 구분선을 더 가까이 위치 */
+  transform: translateY(-50%);
+  width: 1px; /* 두께 */
+  height: 13px; /* 높이 */
+  background-color: #707070; /* 작대기 색상 */
 }
 
-.footer .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
+.footer .footer-contact li:last-child::after {
+  content: none; /* 마지막 li의 구분선 제거 */
 }
 
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-.footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  display: inline-block;
-  line-height: 1;
-}
-
-.footer .footer-links ul a:hover {
-  color: var(--accent-color);
+.footer .footer-contact li a {
+  color: #fff;
+  margin: 0 0.5vw; /* 링크 간격 */
 }
 
 .footer .footer-contact p {
-  margin-bottom: 5px;
+  margin: 0;
+  padding: 0;
 }
 
-.footer .copyright {
-  padding: 30px 0;
-}
-
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 5px;
-  font-size: 13px;
+.footer .social-links {
+  display: flex;
+  justify-content: flex-end; /* 아이콘을 우측 정렬 */
+  flex-direction: row; /* 요소들이 수평으로 정렬되도록 */
+  align-items: center;
 }
 
 .footer .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: color-mix(in srgb, var(--default-color), transparent 92%);
-  color: var(--accent-color);
+  font-size: 2.6vw;
+  color: #fff;
   line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 4px;
-  text-align: center;
-  width: 36px;
-  height: 36px;
+  margin-right: 1vw;
   transition: 0.3s;
 }
 
+.footer .social-links a:nth-child(4) {
+  margin-right: 0;
+}
+
 .footer .social-links a:hover {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  text-decoration: none;
+  color: #e0e621;
 }

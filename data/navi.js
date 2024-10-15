@@ -8,7 +8,7 @@ const navidata = [
 
 {
   d1text:"메뉴 소개",
-  d1href:"#b_menu",
+  d1href:"#menu",
   target : ""
 },
 
@@ -20,12 +20,18 @@ const navidata = [
 
 {
   d1text : "브랜드 만족도",
-  d1href : "#about",
+  d1href : "#satisfaction",
   __target : ""
 },
 
 {
-  d1text:"매장 안내",
+  d1text:"매장안내",
+  d1href:"#info",
+  target : ""
+},
+
+{
+  d1text:"가맹문의",
   d1href:"#info",
   target : ""
 }
