@@ -168,7 +168,7 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <!-- 페이지네이션 -->
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div> -->
       </div>
     </section>
     <!-- /mainVisual Section -->
@@ -406,10 +406,8 @@
     </section>
     <!-- /Compettion Section -->
 
-    <!-- satisfaction section -->
-    <section id="satisfaction" class="container-fluid">
-
-      <!-- 첫 번째 마퀴 애니메이션 (오른쪽에서 왼쪽으로) -->
+    <section id="marquee-ani">
+    <!-- 첫 번째 마퀴 애니메이션 (오른쪽에서 왼쪽으로) -->
       <div class="marquee-container">
         <div class="marquee-ani marquee-left">
           <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/1x/marquee1-100.jpg?raw=true"
@@ -428,9 +426,13 @@
             alt="marquee2"> <!-- 복제 이미지 -->
         </div>
       </div>
+    </section>
+
+    <!-- satisfaction section -->
+    <section id="satisfaction" class="container-fluid">
 
       <div class="container section-title pb-5" data-aos="fade-up">
-        <h2 class="display-4 mb-0">고객이 선택한 브랜드</h2> <!-- display-4 클래스 사용 -->
+        <h2 id="satisfaction" class="display-4 mb-0">고객이 선택한 브랜드</h2> <!-- display-4 클래스 사용 -->
         <p class="txt">
           배달앱 평점 5점!<br>다양한 고객님들이 만족한 리뷰를 직접 확인해보세요!
         </p>
@@ -542,113 +544,162 @@
         <h2>매장 안내</h2>
         <p>젠틀 버거 매장 안내 및 창업 문의</p>
       </div>
-      <div class="row no-gutters">
-        <div class="col-md-6 p-0">
-          <div class="banner left-banner">
-            <h3>젠틀버거와 함께<br>걸어갈 분들을 모집합니다</h3>
-            <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/Franchise.png?raw=true" alt="가맹점"
-              class="franchise">
-            <div class="btn btn-primary">
-              <a href="#">가맹점 문의</a>
+
+      <div class="inquiry-section container">
+        <form action="" class="inquiryForm" onsubmit="return false;" id="inquiryForm">
+          <div class="d-flex align-items-center">
+
+            <div class="d-flex  justify-content-between align-items-center w-100">
+
+                  <div class="input-wrap ">
+                    <div class="th">희망지역(선택)</div>
+                    <div class="td">
+                      <div class="select-wrap d-flex"> <!-- d-flex 클래스를 추가하여 수평 배치 -->
+                        <div class="select-box">
+                          <select name="inquirySelect1" id="inquirySelect1">
+                            <option value="">시/도 선택</option>
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="부산광역시">부산광역시</option>
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="경상북도">경상북도</option>
+                            <option value="경상남도">경상남도</option>
+                            <option value="경기도">경기도</option>
+                            <option value="충청북도">충청북도</option>
+                            <option value="충청남도">충청남도</option>
+                            <option value="제주특별자치도">제주특별자치도</option>
+                            <option value="전라북도">전라북도</option>
+                            <option value="전라남도">전라남도</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="울산광역시">울산광역시</option>
+                            <option value="세종특별자치시">세종특별자치시</option>
+                            <option value="강원특별자치도">강원특별자치도</option>
+                          </select>
+                        </div>
+                        <div class="select-box">
+                          <select name="inquirySelect2" id="inquirySelect2">
+                            <option value="">구/군 선택</option>
+                          </select>
+                        </div>
+                        <div class="search_box">
+                          <input type="search" name="KeyWord" id="KeyWord" value="" class="search_store" placeholder="검색어입력">
+                          <button type="button" id="btnSearch"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-wrap">
+                    <button type="button" class="btn" id="btn1">가맹문의</button>
+                  </div>
             </div>
+            
+        
           </div>
-        </div>
+        </form>
+      </div>
+
+      <div class="row no-gutters">
 
         <div class="col-md-6 p-0">
           <div class="banner right-banner">
             <h3>매장찾기</h3>
-
             <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/store-find-isometric.png?raw=true"
               alt="매장 이미지" class="store-image vw-20">
-
-            <form>
-              <input type="text" placeholder="매장명 검색" class="form-control">
-            </form>
-
           </div>
         </div>
+
       </div>
     </section>
     <!-- /info Section -->
 
 
     <!-- inquiry Section -->
-<section id="inquiry">
-  <div class="inquiry-section container">
-    <form action="" class="inquiryForm" onsubmit="return false;" id="inquiryForm">
-      <div class="table d-flex">
-        <div class="row row01">
-          <div class="th">가맹문의</div>
-          <div class="td">
-            <div class="input-wrap">
-              <div class="input-box">
-                <input type="text" name="inquiryName" id="inquiryName1" placeholder="이름 (필수)">
-              </div>
-              <div class="input-box">
-                <input type="text" name="inquiryTel" id="inquiryTel1" oninput="hypenTel(this)" maxlength="13" placeholder="연락처 (필수)">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row row02">
-          <div class="th">희망지역 (선택)</div>
-          <div class="td">
-            <div class="select-wrap d-flex"> <!-- d-flex 클래스를 추가하여 수평 배치 -->
-              <div class="select-box">
-                <select name="inquirySelect1" id="inquirySelect1">
-                  <option value="">시/도 선택</option>
-                  <option value="서울특별시">서울특별시</option>
-                  <option value="부산광역시">부산광역시</option>
-                  <option value="대전광역시">대전광역시</option>
-                  <option value="대구광역시">대구광역시</option>
-                  <option value="광주광역시">광주광역시</option>
-                  <option value="경상북도">경상북도</option>
-                  <option value="경상남도">경상남도</option>
-                  <option value="경기도">경기도</option>
-                  <option value="충청북도">충청북도</option>
-                  <option value="충청남도">충청남도</option>
-                  <option value="제주특별자치도">제주특별자치도</option>
-                  <option value="전라북도">전라북도</option>
-                  <option value="전라남도">전라남도</option>
-                  <option value="인천광역시">인천광역시</option>
-                  <option value="울산광역시">울산광역시</option>
-                  <option value="세종특별자치시">세종특별자치시</option>
-                  <option value="강원특별자치도">강원특별자치도</option>
-                </select>
-              </div>
-              <div class="select-box">
-                <select name="inquirySelect2" id="inquirySelect2">
-                  <option value="">구/군 선택</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row row03">
-          <div class="td">
-            <button type="button" class="btn" id="btn1">가맹문의</button>
-          </div>
-        </div>
+    <section id="inquiry">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>가맹점 문의</h2>
+        <h3>젠틀 버거와 함께 걸어갈 분들을 모집합니다</p>
+        <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/Franchise.png?raw=true" alt="가맹점" class="franchise pt-5">
       </div>
-      <div class="etc">
-        <div class="tel">
-          <i></i>
-          <a href="tel:1555-0620">1555-0620 (상담 문의)</a>
-        </div>
-        <div class="agree">
-          <label for="agreeCheck1">
-            <input type="checkbox" name="agreeCheck" id="agreeCheck1">
-            <i></i>
-            <span>개인정보 처리방침 동의하기</span>
-          </label>
-          <button type="button" onclick="window.open('/child/member/privacy.php','개인정보처리방침', 'width=430, height=500, location=no, status=no, scrollbars=1');">전문보기</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</section>
+      <div class="inquiry-section container">
+        <form action="" class="inquiryForm" onsubmit="return false;" id="inquiryForm">
+          <div class="d-flex align-items-center">
 
-    
+            <div class="d-flex  justify-content-between align-items-center w-100">
+              
+            
+                <div class="input-wrap ">
+                  <div class="th">가맹문의</div>
+                  <div class="input-box">
+                    <input type="text" name="inquiryName" id="inquiryName1" placeholder="이름 (필수)">
+                  </div>
+                  <div class="input-box">
+                    <input type="text" name="inquiryTel" id="inquiryTel1" oninput="hypenTel(this)" maxlength="13"
+                      placeholder="연락처 (필수)">
+                  </div>
+                </div>
+          
+                  <div class="input-wrap ">
+                    <div class="th">희망지역(선택)</div>
+                    <div class="td">
+                      <div class="select-wrap d-flex"> <!-- d-flex 클래스를 추가하여 수평 배치 -->
+                        <div class="select-box">
+                          <select name="inquirySelect1" id="inquirySelect1">
+                            <option value="">시/도 선택</option>
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="부산광역시">부산광역시</option>
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="경상북도">경상북도</option>
+                            <option value="경상남도">경상남도</option>
+                            <option value="경기도">경기도</option>
+                            <option value="충청북도">충청북도</option>
+                            <option value="충청남도">충청남도</option>
+                            <option value="제주특별자치도">제주특별자치도</option>
+                            <option value="전라북도">전라북도</option>
+                            <option value="전라남도">전라남도</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="울산광역시">울산광역시</option>
+                            <option value="세종특별자치시">세종특별자치시</option>
+                            <option value="강원특별자치도">강원특별자치도</option>
+                          </select>
+                        </div>
+                        <div class="select-box">
+                          <select name="inquirySelect2" id="inquirySelect2">
+                            <option value="">구/군 선택</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-wrap ">
+                    <button type="button" class="btn" id="btn1">가맹문의</button>
+                  </div>
+            </div>
+            
+        
+          </div>
+          <div class="etc">
+            <div class="tel">
+              <i></i>
+              <a href="tel:1555-0620">1555-0620 (상담 문의)</a>
+            </div>
+            <div class="agree">
+              <label for="agreeCheck1">
+                <input type="checkbox" name="agreeCheck" id="agreeCheck1">
+                <i></i>
+                <span>개인정보 처리방침 동의하기</span>
+              </label>
+              <button type="button"
+                onclick="window.open('/child/member/privacy.php','개인정보처리방침', 'width=430, height=500, location=no, status=no, scrollbars=1');">전문보기</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
 
   </main>
 
@@ -659,7 +710,9 @@
           <div class="footer-about col-3">
             <a href="index.html" class="logo d-flex align-items-center">
               <span class="sitename">
-                <img src="https://raw.githubusercontent.com/KSH7131/portfolio_01/b952d200e91b439e09265573f4afedb70ccd5058/ksh/image/SVG/web_whiteonly.svg" class="w-100 h-auto">
+                <img
+                  src="https://raw.githubusercontent.com/KSH7131/portfolio_01/b952d200e91b439e09265573f4afedb70ccd5058/ksh/image/SVG/web_whiteonly.svg"
+                  class="w-100 h-auto">
               </span>
             </a>
           </div>
@@ -677,13 +730,12 @@
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
       </div>
     </div>
   </footer>
-  
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

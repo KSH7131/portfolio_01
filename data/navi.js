@@ -26,13 +26,13 @@ const navidata = [
 
 {
   d1text:"매장안내",
-  d1href:"#info",
+  d1href:"#info_h",
   target : ""
 },
 
 {
   d1text:"가맹문의",
-  d1href:"#info",
+  d1href:"#inquiry",
   target : ""
 }
 
