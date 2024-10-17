@@ -40,6 +40,7 @@
   <script src="./ksh/js/bigburger.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c982f299b0fc3bb431ad6269d71db9fd"></script>
 
   <!-- =======================================================
   * Template Name: AgriCulture
@@ -135,7 +136,7 @@
       <nav id="navmenu" class="navmenu">
         <ul></ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+      </nav>      
 
     </div>
   </header>
@@ -407,7 +408,7 @@
     <!-- /Compettion Section -->
 
     <section id="marquee-ani">
-    <!-- 첫 번째 마퀴 애니메이션 (오른쪽에서 왼쪽으로) -->
+      <!-- 첫 번째 마퀴 애니메이션 (오른쪽에서 왼쪽으로) -->
       <div class="marquee-container">
         <div class="marquee-ani marquee-left">
           <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/1x/marquee1-100.jpg?raw=true"
@@ -541,76 +542,52 @@
     <!-- info Section -->
     <section id="info" class="container-fluid">
       <div class="container section-title" data-aos="fade-up">
-        <h2>매장 안내</h2>
-        <p>젠틀 버거 매장 안내 및 창업 문의</p>
+        <h2>STORE</h2>
+        <h2 class="pt-3 pb-5">GENTLE BURGER STORE</h2>
       </div>
+    <div class="row no-gutters">
+        <div id="map" class="col-md-8 rounded">
+        </div>
 
-      <div class="inquiry-section container">
-        <form action="" class="inquiryForm" onsubmit="return false;" id="inquiryForm">
-          <div class="d-flex align-items-center">
-
-            <div class="d-flex  justify-content-between align-items-center w-100">
-
-                  <div class="input-wrap ">
-                    <div class="th">희망지역(선택)</div>
-                    <div class="td">
-                      <div class="select-wrap d-flex"> <!-- d-flex 클래스를 추가하여 수평 배치 -->
-                        <div class="select-box">
-                          <select name="inquirySelect1" id="inquirySelect1">
-                            <option value="">시/도 선택</option>
-                            <option value="서울특별시">서울특별시</option>
-                            <option value="부산광역시">부산광역시</option>
-                            <option value="대전광역시">대전광역시</option>
-                            <option value="대구광역시">대구광역시</option>
-                            <option value="광주광역시">광주광역시</option>
-                            <option value="경상북도">경상북도</option>
-                            <option value="경상남도">경상남도</option>
-                            <option value="경기도">경기도</option>
-                            <option value="충청북도">충청북도</option>
-                            <option value="충청남도">충청남도</option>
-                            <option value="제주특별자치도">제주특별자치도</option>
-                            <option value="전라북도">전라북도</option>
-                            <option value="전라남도">전라남도</option>
-                            <option value="인천광역시">인천광역시</option>
-                            <option value="울산광역시">울산광역시</option>
-                            <option value="세종특별자치시">세종특별자치시</option>
-                            <option value="강원특별자치도">강원특별자치도</option>
-                          </select>
-                        </div>
-                        <div class="select-box">
-                          <select name="inquirySelect2" id="inquirySelect2">
-                            <option value="">구/군 선택</option>
-                          </select>
-                        </div>
-                        <div class="search_box">
-                          <input type="search" name="KeyWord" id="KeyWord" value="" class="search_store" placeholder="검색어입력">
-                          <button type="button" id="btnSearch"></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="input-wrap">
-                    <button type="button" class="btn" id="btn1">가맹문의</button>
-                  </div>
-            </div>
-            
-        
-          </div>
-        </form>
-      </div>
-
-      <div class="row no-gutters">
-
-        <div class="col-md-6 p-0">
-          <div class="banner right-banner">
-            <h3>매장찾기</h3>
-            <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/store-find-isometric.png?raw=true"
-              alt="매장 이미지" class="store-image vw-20">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <div class="container shadow-sm bg-white h-100 d-flex align-items-center justify-content-center rounded">
+            <form action="" style="min-width: 400px;" onsubmit="return false;">
+              <div class="input-wrap">
+                <dl>
+                  <dd>매장찾기</dd>
+                  <dt>원하시는 매장을 검색해보세요</dt>
+                </dl>
+                <div class="search_box">
+                  <div class="search_box">
+                    <input type="search" name="KeyWord" id="KeyWord" value="" class="search_store rounded-pill px-2" placeholder="지점명 또는 주소를 입력해주세요">
+                    <button type="button" class="rounded-pill" id="btnSearch"">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>                  
+                </div>
+              </div>
+            </form>
           </div>
         </div>
+      </div>
+        
+        </form>
+      </div>
+      </div>
 
       </div>
     </section>
+
+    <script>
+      var container = document.getElementById('map');
+      var options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3
+      };
+  
+      var map = new kakao.maps.Map(container, options);
+    </script>
+
     <!-- /info Section -->
 
 
@@ -619,66 +596,67 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>가맹점 문의</h2>
         <h3>젠틀 버거와 함께 걸어갈 분들을 모집합니다</p>
-        <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/Franchise.png?raw=true" alt="가맹점" class="franchise pt-5">
+          <img src="https://github.com/KSH7131/portfolio_01/blob/main/ksh/image/Franchise.png?raw=true" alt="가맹점"
+            class="franchise pt-5">
       </div>
       <div class="inquiry-section container">
         <form action="" class="inquiryForm" onsubmit="return false;" id="inquiryForm">
           <div class="d-flex align-items-center">
 
             <div class="d-flex  justify-content-between align-items-center w-100">
-              
-            
-                <div class="input-wrap ">
-                  <div class="th">가맹문의</div>
-                  <div class="input-box">
-                    <input type="text" name="inquiryName" id="inquiryName1" placeholder="이름 (필수)">
-                  </div>
-                  <div class="input-box">
-                    <input type="text" name="inquiryTel" id="inquiryTel1" oninput="hypenTel(this)" maxlength="13"
-                      placeholder="연락처 (필수)">
-                  </div>
+
+
+              <div class="input-wrap ">
+                <div class="th">가맹문의</div>
+                <div class="input-box">
+                  <input type="text" name="inquiryName" id="inquiryName1" placeholder="이름 (필수)">
                 </div>
-          
-                  <div class="input-wrap ">
-                    <div class="th">희망지역(선택)</div>
-                    <div class="td">
-                      <div class="select-wrap d-flex"> <!-- d-flex 클래스를 추가하여 수평 배치 -->
-                        <div class="select-box">
-                          <select name="inquirySelect1" id="inquirySelect1">
-                            <option value="">시/도 선택</option>
-                            <option value="서울특별시">서울특별시</option>
-                            <option value="부산광역시">부산광역시</option>
-                            <option value="대전광역시">대전광역시</option>
-                            <option value="대구광역시">대구광역시</option>
-                            <option value="광주광역시">광주광역시</option>
-                            <option value="경상북도">경상북도</option>
-                            <option value="경상남도">경상남도</option>
-                            <option value="경기도">경기도</option>
-                            <option value="충청북도">충청북도</option>
-                            <option value="충청남도">충청남도</option>
-                            <option value="제주특별자치도">제주특별자치도</option>
-                            <option value="전라북도">전라북도</option>
-                            <option value="전라남도">전라남도</option>
-                            <option value="인천광역시">인천광역시</option>
-                            <option value="울산광역시">울산광역시</option>
-                            <option value="세종특별자치시">세종특별자치시</option>
-                            <option value="강원특별자치도">강원특별자치도</option>
-                          </select>
-                        </div>
-                        <div class="select-box">
-                          <select name="inquirySelect2" id="inquirySelect2">
-                            <option value="">구/군 선택</option>
-                          </select>
-                        </div>
-                      </div>
+                <div class="input-box">
+                  <input type="text" name="inquiryTel" id="inquiryTel1" oninput="hypenTel(this)" maxlength="13"
+                    placeholder="연락처 (필수)">
+                </div>
+              </div>
+
+              <div class="input-wrap ">
+                <div class="th">희망지역(선택)</div>
+                <div class="td">
+                  <div class="select-wrap d-flex"> <!-- d-flex 클래스를 추가하여 수평 배치 -->
+                    <div class="select-box">
+                      <select name="inquirySelect1" id="inquirySelect1">
+                        <option value="">시/도 선택</option>
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="경기도">경기도</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
+                        <option value="강원특별자치도">강원특별자치도</option>
+                      </select>
+                    </div>
+                    <div class="select-box">
+                      <select name="inquirySelect2" id="inquirySelect2">
+                        <option value="">구/군 선택</option>
+                      </select>
                     </div>
                   </div>
-                  <div class="input-wrap ">
-                    <button type="button" class="btn" id="btn1">가맹문의</button>
-                  </div>
+                </div>
+              </div>
+              <div class="input-wrap ">
+                <button type="button" class="btn" id="btn1">가맹문의</button>
+              </div>
             </div>
-            
-        
+
+
           </div>
           <div class="etc">
             <div class="tel">

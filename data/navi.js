@@ -26,7 +26,7 @@ const navidata = [
 
 {
   d1text:"매장안내",
-  d1href:"#info_h",
+  d1href:"#info",
   target : ""
 },
 
