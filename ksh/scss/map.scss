@@ -1,0 +1,48 @@
+.map_wrap,
+.map_wrap * {
+  margin: 0;
+  font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+  font-size: 12px;
+}
+
+.map_wrap a,
+.map_wrap a:hover,
+.map_wrap a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+#menu_wrap {
+  display: flex;
+  align-items: center;
+}
+
+#menu_wrap .option {
+  width: 100%;
+  padding: 3vw;
+}
+
+#menu_wrap .option dl dt {
+  font-size: 3vw;
+}
+
+#menu_wrap .option dl dd {
+  font-size: 1.6vw;
+  font-weight: 500;
+}
+
+#menu_wrap .option input {
+  width: 20vw;
+  height: 5vh;
+}
+
+#menu_wrap .option button {
+  background-color: #fff;
+  width: 3.6vw;
+  height: 5vh;
+  transition: background-color 0.3s;
+}
+
+#menu_wrap .option button:hover {
+  background-color: #e0e621;
+}

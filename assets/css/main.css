@@ -882,52 +882,15 @@ Compettion Section
   font-weight: 900;
   color: #ff5e00;
   font-size: 3.6vw;
-}
-
-#info .input-wrap dl dd{
-  font-size: 3vw;
   font-weight: 700;
 }
 
-#info .input-wrap dl dt{
-  font-size: 1.2vw;
-  font-weight: 500;
-}
-
 #info .row{
-  padding: 0 5vh 5vh 5vh;
-}
-
-#store_search{
-  top: 50%;
-  right: 0;
-  z-index: 99;
-  transform: translateY(-50%);
-}
-
-#info .search_box{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+  padding: 5vh;
 }
 
 #map{
  height: 70vh;
-}
-
-#KeyWord{
-  width: 80%;
-  height: 35px;
-}
-
-#btnSearch{
-  background-color: #fff;
-  width: 17.5%;
-  transition: background-color 0.3s;
-}
-
-#btnSearch:hover{
-  background-color: #e0e621;
 }
 
 #info .banner {
@@ -964,53 +927,6 @@ Compettion Section
   color: white;
 }
 
-#info .right-banner h3 {
-  color: #053B9F;
-}
-
-
-/* 버튼 위치 */
-#info .btn {
-  background-color: #e0e621;
-  position: absolute;
-  top: 35vh;
-  left: 3vw;
-}
-
-#info .btn:hover {
-  background-color: #fff;
-}
-
-
-#info .btn a {
-  color: #053B9F;
-  font-weight: 700;
-}
-
-/* 우측 배너 form */
-#info .right-banner form {
-  position: absolute;
-  display: flex;
-  /* input과 버튼을 가로로 정렬 */
-  gap: 10px;
-  /* input과 버튼 사이 간격 */
-  top: 35vh;
-  left: 3vw;
-}
-
-#info .right-banner form input {
-  flex: 1;
-  /* input이 남는 공간을 차지하도록 설정 */
-}
-
-/* 이미지 스타일 */
-#info .right-banner .store-image {
-  position: absolute;
-  bottom: 1vh;
-  width: 20vw;
-  height: auto;
-  /* 비율 유지 */
-}
 
 
 @media (max-width: 992px) {
@@ -1021,16 +937,6 @@ Compettion Section
   #info .section-title .txt {
     padding-top: 2vh;
     font-size: 1.0rem;
-  }
-}
-
-@media (max-width: 767px) {
-  #info .left-banner .franchise {
-    width: 25vw;
-  }
-
-  #info .right-banner .store-image {
-    width: 45vw;
   }
 }
 
@@ -1318,8 +1224,4 @@ Compettion Section
   #inquiry .d-flex {
     flex-direction: column;
   }
-
-  #inquiry .input-wrap, #inquiry .select-wrap{
-  }
-
 }

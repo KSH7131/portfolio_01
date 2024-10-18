@@ -34,8 +34,8 @@ window.addEventListener('resize', function() {
 
 // 4. 모바일 네비게이션 메뉴 열고 닫는 기능 추가
 document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
-  const nav = document.querySelector('#navmenu ul'); // 네비게이션 메뉴의 <ul> 요소 선택
-  nav.classList.toggle('nav-active'); // 클래스 'nav-active'를 토글하여 메뉴를 보여주거나 숨김
-  this.classList.toggle('bi-x'); // 메뉴 아이콘이 'X' 아이콘으로 변경되도록 처리
-  this.classList.toggle('bi-list'); // 메뉴가 닫히면 다시 리스트 아이콘으로 돌아옴
+  const nav = document.querySelector('#navmenu ul');
+  nav.classList.toggle('mobile-nav-active');
+  this.classList.toggle('bi-x');
+  this.classList.toggle('bi-list');
 });

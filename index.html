@@ -31,16 +31,20 @@
   <link rel="stylesheet" href="./ksh/css/hd.css">
   <link rel="stylesheet" href="./ksh/css/ft.css">
   <link rel="stylesheet" href="./ksh/css/bigburger.css">
+  <link rel="stylesheet" href="./ksh/css/map.css">
   <link href="assets/css/main.css?var=<?php echo time(); ?>" rel="stylesheet">
+  
 
 
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <!-- ui js -->
+  
+  <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 사용하세요&libraries=services"></script> -->
   <script src="./ksh/js/bigburger.js"></script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c982f299b0fc3bb431ad6269d71db9fd"></script>
+
 
   <!-- =======================================================
   * Template Name: AgriCulture
@@ -130,7 +134,6 @@
           </g>
         </svg>
 
-        <!-- <h1 class="sitename">AgriCulture</h1>  -->
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -545,49 +548,33 @@
         <h2>STORE</h2>
         <h2 class="pt-3 pb-5">GENTLE BURGER STORE</h2>
       </div>
-    <div class="row no-gutters">
-        <div id="map" class="col-md-8 rounded">
+      
+      <div class="row no-gutters">
+        <!-- 지도 영역 -->
+        <div class="map_wrap col-md-8 rounded">
+          <div id="map"></div>
         </div>
-
-        <div class="col-md-4 d-flex align-items-center justify-content-center">
-          <div class="container shadow-sm bg-white h-100 d-flex align-items-center justify-content-center rounded">
-            <form action="" style="min-width: 400px;" onsubmit="return false;">
-              <div class="input-wrap">
+        
+        <!-- 검색 결과와 목록 영역 -->
+        <div id="menu_wrap" class="col-md-4 bg-white">
+          <div class="option">
+            <div>
+              <form onsubmit="searchPlaces(); return false;">
                 <dl>
-                  <dd>매장찾기</dd>
-                  <dt>원하시는 매장을 검색해보세요</dt>
+                    <dt>매장찾기</dt>
+                    <dd>원하시는 매장을 검색해주세요</dd>
                 </dl>
                 <div class="search_box">
-                  <div class="search_box">
-                    <input type="search" name="KeyWord" id="KeyWord" value="" class="search_store rounded-pill px-2" placeholder="지점명 또는 주소를 입력해주세요">
-                    <button type="button" class="rounded-pill" id="btnSearch"">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </div>                  
+                    <input type="text" placeholder="검색어를 입력해주세요" class="rounded-pill px-3" id="keyword"> 
+                    <button type="submit" class="rounded-pill"><i class="bi bi-search"></i></button> 
                 </div>
-              </div>
-            </form>
+            </form>            
+            </div>
           </div>
         </div>
       </div>
-        
-        </form>
-      </div>
-      </div>
-
-      </div>
     </section>
-
-    <script>
-      var container = document.getElementById('map');
-      var options = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 3
-      };
-  
-      var map = new kakao.maps.Map(container, options);
-    </script>
-
+    
     <!-- /info Section -->
 
 
@@ -742,5 +729,7 @@
 
 <script src="./data/navi.js"></script>
 <script src="./ksh/js/navi.js"></script>
+<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c982f299b0fc3bb431ad6269d71db9fd&libraries=services"></script>
+<script src="./ksh/js/map.js"></script>
 
 </html>

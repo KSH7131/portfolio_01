@@ -64,10 +64,6 @@ window.addEventListener('load', function() {
       nextEl: '#mainVisual .swiper-button-next',  // 다음 슬라이드로 가는 버튼
       prevEl: '#mainVisual .swiper-button-prev',  // 이전 슬라이드로 가는 버튼
     },
-    pagination: {
-      el: '#mainVisual .swiper-pagination',  // 페이지네이션 위치
-      clickable: true,  // 페이지네이션을 클릭 가능하게 설정
-    },
     effect: 'fade',  // 슬라이드 전환 효과를 페이드로 설정
   });  
 });
